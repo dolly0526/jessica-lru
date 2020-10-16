@@ -21,7 +21,7 @@ public class BioServer {
         // 线程池机制
         ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();
 
-        // 创建ServerSocket
+        // 创建 ServerSocket
         ServerSocket serverSocket = new ServerSocket(6666);
         System.out.println("服务器启动了...");
 
@@ -43,12 +43,11 @@ public class BioServer {
         }
     }
 
-    // 编写一个handler方法，和客户端通讯
+    // 编写一个 handler 方法，和客户端通讯
     public static void handler(Socket socket) {
         byte[] bytes = new byte[1024];
 
         try {
-            // 通过socket，获取输入流
             InputStream inputStream = socket.getInputStream();
 
             // 循环读取客户端发送的数据
