@@ -1,4 +1,4 @@
-package com.dolly.nio;
+package com.dolly.nio.filechannel;
 
 import java.io.File;
 import java.io.FileInputStream;

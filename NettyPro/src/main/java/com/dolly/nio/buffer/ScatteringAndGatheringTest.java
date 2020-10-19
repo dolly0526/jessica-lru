@@ -1,4 +1,4 @@
-package com.dolly.nio;
+package com.dolly.nio.buffer;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
