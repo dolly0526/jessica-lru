@@ -32,6 +32,8 @@ public class NioServer {
         // 把 serverSocketChannel 注册到 selector 关心事件为 OP_ACCEPT
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 
+        System.out.println("注册后的 selectionKey 数量为：" + selector.keys().size());
+
         // 循环等待客户端连接
         while (true) {
 
@@ -48,6 +50,8 @@ public class NioServer {
              *  3、通过 selectionKeys 反向获取通道
              */
             Set<SelectionKey> selectionKeys = selector.selectedKeys();
+
+            System.out.println("有事件发生的 selectionKey 数量为：" + selectionKeys.size());
 
             // 遍历 selectionKeys，使用迭代器遍历
             Iterator<SelectionKey> keyIterator = selectionKeys.iterator();
@@ -70,6 +74,8 @@ public class NioServer {
 
                     // 将 socketChannel 注册到 selector，关注事件为 OP_READ，同时给 socketChannel 关联一个 Buffer
                     socketChannel.register(selector, SelectionKey.OP_READ, ByteBuffer.allocate(1024));
+
+                    System.out.println("注册后的 selectionKey 数量为：" + selector.keys().size());
                 }
 
                 // 如果是 OP_READ，可读
