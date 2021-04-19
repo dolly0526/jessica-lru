@@ -19,7 +19,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <ratis.version>2.0.0</ratis.version>
+        <ratis.version>1.0.0</ratis.version>
         <hutool.version>5.5.9</hutool.version>
     </properties>
 
@@ -67,7 +67,12 @@
         </dependency>
         <dependency>
             <groupId>org.apache.ratis</groupId>
-            <artifactId>ratis-netty</artifactId>
+            <artifactId>ratis-grpc</artifactId>
+            <version>${ratis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ratis</groupId>
+            <artifactId>ratis-examples</artifactId>
             <version>${ratis.version}</version>
         </dependency>
     </dependencies>

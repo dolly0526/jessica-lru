@@ -12,17 +12,17 @@ import java.util.Map;
  * @create 2021/4/18 21:46
  */
 @Slf4j
-public class LruCache extends LinkedHashMap<String, Object> {
+public class LruCache<K, V> extends LinkedHashMap<K, V> {
 
-    private int _capacity;
+    private int capacity;
 
     public LruCache(int capacity) {
         super(capacity, 0.8f, true);
-        _capacity = capacity;
+        this.capacity = capacity;
     }
 
     @Override
-    protected boolean removeEldestEntry(Map.Entry<String, Object> eldest) {
-        return size() > _capacity;
+    protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
+        return size() > this.capacity;
     }
 }
